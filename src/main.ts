@@ -450,6 +450,11 @@ export class Accessibility implements IAccessibility {
             transform: rotate(0deg);
             font-style: normal !important;
         }
+        ._access-menu ul li button[data-access-action="customFunctions"][data-access-custom-id="accessibility"] {
+            color: #4054b2;
+            font-size: 15px;
+            font-weight: bold;
+        }
         ._access-menu ._menu-btn {
             position: absolute;
             top: 5px;
@@ -1078,10 +1083,7 @@ export class Accessibility implements IAccessibility {
                     this._common.injectStyle(css, { className: className });
                     this._common.deployedObjects.set('.' + className, false);
                 }
-                if (this.options.modules.textToSpeech)
-                    json.children[1].children.splice(json.children[1].children.length - 2, 0, btn);
-                else
-                    json.children[1].children.push(btn);
+                json.children[1].children.unshift(btn);
             });
         }
         let menuElem = this._common.jsonToHtml(json);

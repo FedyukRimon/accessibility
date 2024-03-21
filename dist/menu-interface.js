@@ -480,7 +480,7 @@ var MenuInterface = /*#__PURE__*/function () {
               type: 'iframe',
               attrs: {
                 src: button.getAttribute('data-access-url'),
-                style: 'width: 50vw;height: 50vh;padding: 30px;'
+                style: 'width: 50vw;height: 50vh;padding: 30px;border: 0;'
               }
             }]
           }]
